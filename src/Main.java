@@ -142,15 +142,20 @@ public class Main {
 
         // changing the position of the shape by dragging with the mouse
         renderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+
             public void mousePressed(java.awt.event.MouseEvent e) {
+
                 // store the current mouse position when the mouse is pressed
                 lastMousePos[0] = e.getX();
                 lastMousePos[1] = e.getY();
+
             }
+
         });
 
         // changing the shape with the mouse wheel
         renderPanel.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent e) {
                 // get the rotation of the wheel
                 int rotation = e.getWheelRotation();
@@ -160,7 +165,9 @@ public class Main {
         
                 // update the scaleSlider based on the rotation
                 scaleSlider.setValue(scaleSlider.getValue() - rotation * factor);
+
             }
+            
         });
 
         // these two listeners force redraw when we drag the sliders
