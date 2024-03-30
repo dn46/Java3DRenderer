@@ -12,6 +12,10 @@ public class Vertex {
 
     }
 
+    public Vertex scale(double factor) {
+        return new Vertex(x * factor, y * factor, z * factor);
+    }
+
 
     public double getX() {
         return this.x;
