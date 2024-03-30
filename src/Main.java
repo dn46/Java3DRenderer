@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
-public class DemoViewer {
+public class Main {
     
     public static void main(String[] args) {
 

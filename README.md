@@ -26,6 +26,10 @@ This project is a simple 3D shape viewer implemented in Java. It allows you to v
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Acknowledgements
+
+Most of the code for this project was adapted from [this blog post](http://blog.rogach.org/2015/08/how-to-create-your-own-simple-3d-render.html). Many thanks to the author for making it available.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
