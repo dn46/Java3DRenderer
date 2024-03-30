@@ -44,14 +44,26 @@ public class DemoViewer {
                 g2.setColor(Color.BLACK);
                 g2.fillRect(0, 0, getWidth(), getHeight());
 
-                // the rotation matrix
+                // the rotation matrix 
                 double heading = Math.toRadians(headingSlider.getValue());
 
-                Matrix3 transform = new Matrix3(new double[] {
+                // horizontal slider
+                Matrix3 headingTransform = new Matrix3(new double[] {
                     Math.cos(heading), 0, -Math.sin(heading),
                     0, 1, 0,
                     Math.sin(heading), 0, Math.cos(heading) 
                 });
+
+                double pitch = Math.toRadians(pitchSlider.getValue());
+                
+                // vertical slider
+                Matrix3 pitchTransform = new Matrix3(new double[] {
+                    1, 0, 0,
+                    0, Math.cos(pitch), Math.sin(pitch),
+                    0, -Math.sin(pitch), Math.cos(pitch)
+                });
+
+                Matrix3 transform = headingTransform.multiply(pitchTransform); // multiplying one matrix with the other
 
                 g2.translate(getWidth() / 2, getHeight() / 2);
                 g2.setColor(Color.WHITE);
