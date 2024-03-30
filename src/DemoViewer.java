@@ -44,14 +44,26 @@ public class DemoViewer {
                 g2.setColor(Color.BLACK);
                 g2.fillRect(0, 0, getWidth(), getHeight());
 
+                // the rotation matrix
+                double heading = Math.toRadians(headingSlider.getValue());
+
+                Matrix3 transform = new Matrix3(new double[] {
+                    Math.cos(heading), 0, -Math.sin(heading),
+                    0, 1, 0,
+                    Math.sin(heading), 0, Math.cos(heading) 
+                });
+
                 g2.translate(getWidth() / 2, getHeight() / 2);
                 g2.setColor(Color.WHITE);
 
                 for (Triangle triangle : triangles) {
+                    Vertex v1 = transform.transform(triangle.getV1());
+                    Vertex v2 = transform.transform(triangle.getV2());
+                    Vertex v3 = transform.transform(triangle.getV3());
                     Path2D path = new Path2D.Double();
-                    path.moveTo(triangle.getV1().getX(), triangle.getV1().getY());
-                    path.lineTo(triangle.getV2().getX(), triangle.getV2().getY());
-                    path.lineTo(triangle.getV3().getX(), triangle.getV3().getY());
+                    path.moveTo(v1.getX(), v1.getY());
+                    path.lineTo(v2.getX(), v2.getY());
+                    path.lineTo(v3.getX(), v3.getY());
                     path.closePath();
                     g2.draw(path);
                 }
@@ -59,6 +71,10 @@ public class DemoViewer {
             }
 
         };
+
+        // these two listeners force redraw when we drag the sliders
+        headingSlider.addChangeListener(e -> renderPanel.repaint());
+        pitchSlider.addChangeListener(e -> renderPanel.repaint());
 
         pane.add(renderPanel, BorderLayout.CENTER);
 
