@@ -1,18 +1,31 @@
-## Getting Started
+# 3D Shape Viewer
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project is a simple 3D shape viewer implemented in Java. It allows you to view and interact with 3D shapes like a Pyramid and a Cube.
 
-## Folder Structure
+## Features
 
-The workspace contains two folders by default, where:
+- Rotate the shape horizontally and vertically using the mouse.
+- Increase or decrease the size of the shape using the mouse wheel.
+- Choose the shape to display from a dropdown menu.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## How to Run
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+1. Ensure you have Java installed on your system. If not, you can download it from [here](https://www.oracle.com/java/technologies/downloads/).
+2. Clone this repository to your local machine.
+3. Navigate to the directory containing `DemoViewer.java`.
+4. Compile the Java file using the command `javac DemoViewer.java`.
+5. Run the program using the command `java DemoViewer`.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Controls
 
-## Dependency Management
+- Click and drag the mouse to rotate the shape.
+- Scroll the mouse wheel to increase or decrease the size of the shape.
+- Select the shape from the dropdown menu at the top of the window.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
